@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio Erick Oliveira</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="mac-window">
+    <div class="window-header">
+        <div class="window-buttons">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="user-avatar">
+          <img src="sua-foto.jpg" alt="Foto do usuário" />
+        </div>
+    </div>
+    
+    <div class="window-body">
+      <aside class="sidebar">
+        <h3>Categories</h3>
+        <ul class="menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#jobs">Jobs</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+        <h3>Social Link</h3>
+        <ul>
+          <li>🔗 Linkedin</li>
+          <li>🐱 Github</li>
+          <li>✉️ Email</li>
+          <li>💬 Whatsapp</li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <section id="about" class="profile-card">
+          <h2>Erick Oliveira</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus fermentum orci ac tincidunt...
+          </p>
+        </section>
+
+        <section id="skills" class="skills-section">
+          <h3>My Skills</h3>
+          <div class="skills">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" />
+          </div>
+        </section>
+
+        <section id="jobs" class="jobs-section">
+          <h3>My Jobs</h3>
+          <div class="job-card">
+            <div class="job-header">
+              <strong>Company Name</strong>
+              <span>dd/MM/yyyy</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h3>My Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="project-card">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2>My Education</h2>
+            <div class="job-card">
+              <h3>Institution Name <span class="date">dd/MM/yyyy</span></h3>
+              <p>Donec consequat leo purus, non euismod mi feugiat eu. Ut nunc justo, volutpat vel euismod in.</p>
+            </div>
+          </section>
+          
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const mainContent = document.querySelector('.main-content');
+    let scrollTimeout;
+  
+    mainContent.addEventListener('mouseenter', () => {
+      mainContent.classList.add('show-scroll');
+    });
+  
+    mainContent.addEventListener('mousemove', () => {
+      mainContent.classList.add('show-scroll');
+  
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        mainContent.classList.remove('show-scroll');
+      }, 1000);
+    });
+  
+    mainContent.addEventListener('mouseleave', () => {
+      mainContent.classList.remove('show-scroll');
+    });
+</script>
+
+<script>
+    const sidebarLinks = document.querySelectorAll('.menu a');
+    const content = document.querySelector('.main-content');
+  
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          content.scrollTo({
+            top: targetSection.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

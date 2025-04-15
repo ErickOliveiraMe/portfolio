@@ -1,0 +1,254 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c0c0c0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* MAC WINDOW */
+.mac-window {
+  width: 900px;
+  height: 600px;
+  background-color: #666;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.window-header {
+  background-color: #4d4d4d;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.red { background-color: #ff5f57; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #28c840; }
+
+/* LAYOUT */
+.window-body {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 180px;
+  background-color: #5a5a5a;
+  padding: 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.sidebar h3 {
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.sidebar li {
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+/* MAIN CONTENT SCROLLABLE */
+.main-content {
+  flex: 1;
+  background-color: #777;
+  padding: 20px;
+  overflow-y: auto;
+  color: white;
+}
+
+/* PROFILE */
+.profile-card {
+  background-color: #3c6960;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+/* SKILLS */
+.skills-section {
+  margin-bottom: 20px;
+}
+.skills {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+.skills img {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+/* JOBS */
+.jobs-section .job-card {
+  background-color: #5c5c5c;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* PROJECTS */
+.projects-section {
+  margin-bottom: 20px;
+}
+.projects-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.project-card {
+  background-color: #aaa;
+  border-radius: 10px;
+  padding: 15px;
+  width: calc(50% - 10px);
+}
+
+/* === Custom Scrollbar para navegadores WebKit === */
+.main-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: #5e5e5e;
+  border-radius: 10px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #28c840, #3c6960);
+  border-radius: 10px;
+  border: 2px solid #5e5e5e;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2ae856, #4a8276);
+}
+
+/* Firefox Scrollbar */
+.main-content {
+  scrollbar-width: thin;
+  scrollbar-color: #3c6960 #5e5e5e;
+}
+
+/* SCROLL INVISÍVEL POR PADRÃO */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: #3c6960;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* ATIVADO COM CLASSE */
+.main-content.show-scroll::-webkit-scrollbar {
+  opacity: 1;
+}
+
+/* Firefox */
+.main-content {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s;
+}
+.main-content.show-scroll {
+  scrollbar-color: #3c6960 transparent;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.job-card {
+  background-color: #5e5e5e;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.job-card h3 {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.job-card .date {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.projects {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  flex: 1;
+  min-width: 200px;
+  background-color: #5e5e5e;
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
