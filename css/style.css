@@ -4,9 +4,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body{
+  background-image: url('https://media.giphy.com/media/WUyQbeKHhpaHrrKJu6/giphy.gif?cid=ecf05e470b7plr07gtrxb60ceps94qhuvnqkpg731mvwdlho&ep=v1_gifs_search&rid=giphy.gif&ct=g');
+  background-size: cover;
+  height: 100vh;
+  padding:0;
+  margin:0;
+}
 body {
-  background-color: #c0c0c0;
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
@@ -56,7 +61,7 @@ body {
   background-color: #5a5a5a;
   padding: 20px;
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .sidebar h3 {
@@ -249,6 +254,74 @@ html {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.profile-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.job-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.html {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.html:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.css {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.css:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.js {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.js:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.c {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.c:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.perfil-img{
+  border-radius: 30px;
+}
+
+a, a:link{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  text-decoration: underline;
+  background-color: rgb(73, 73, 73);
 }
